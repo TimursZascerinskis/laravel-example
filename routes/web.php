@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\Controllers\PostController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -9,6 +10,7 @@ Route::get('/', function () {
 Route::get('/form', function () {
     return view('form');
 });
+Route::resource('posts', PostController::class);
 
 Route::get('/static-form', function () {
     return view('static_form');
